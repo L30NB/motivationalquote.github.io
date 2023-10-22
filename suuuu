@@ -92,87 +92,25 @@ const quotes = [
         text: "Believe you can and you're halfway there.",
         author: "Theodore Roosevelt"
     },
-    // ... (other quotes you already have)
-    {
-        text: "Success is the result of relentless hustle and dedication.",
-        author: "Andrew Tate"
-    },
-    {
-        text: "The only way to become the best is to be the best under the worst conditions.",
-        author: "David Goggins"
-    },
-    {
-        text: "You can't make a person do something they don't want to do. But you can inspire them to want to change.",
-        author: "David Goggins"
-    },
-    {
-        text: "The only limits that exist are the ones you place on yourself.",
-        author: "Andrew Tate"
-    },
-    {
-        text: "Don't fear failure; fear being in the exact same place next year as you are today.",
-        author: "Andrew Tate"
-    },
-    // Additional quotes
-    {
-        text: "The harder you work for something, the greater you'll feel when you achieve it.",
-        author: "Tim Tebow"
-    },
-    {
-        text: "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
-        author: "Christian D. Larson"
-    },
-    {
-        text: "You are never too old to set another goal or to dream a new dream.",
-        author: "C.S. Lewis"
-    },
-    {
-        text: "Success is walking from failure to failure with no loss of enthusiasm.",
-        author: "Winston S. Churchill"
-    },
-    {
-        text: "The future belongs to those who believe in the beauty of their dreams.",
-        author: "Eleanor Roosevelt"
-    },
-    // Continue adding more quotes until you reach 200...
+    // ... Add more quotes here until you reach 200
 ];
 
-// ... (rest of the JavaScript code)
-const quotes = [
-    {
-        text: "Your time is limited, don't waste it living someone else's life.",
-        author: "Steve Jobs"
-    },
-    {
-        text: "The only way to do great work is to love what you do.",
-        author: "Steve Jobs"
-    },
-    {
-        text: "Believe you can and you're halfway there.",
-        author: "Theodore Roosevelt"
-    },
-    // ... (other quotes you already have)
-    {
-        text: "Success is the result of relentless hustle and dedication.",
-        author: "Andrew Tate"
-    },
-    {
-        text: "The only way to become the best is to be the best under the worst conditions.",
-        author: "David Goggins"
-    },
-    {
-        text: "You can't make a person do something they don't want to do. But you can inspire them to want to change.",
-        author: "David Goggins"
-    },
-    {
-        text: "The only limits that exist are the ones you place on yourself.",
-        author: "Andrew Tate"
-    },
-    {
-        text: "Don't fear failure; fear being in the exact same place next year as you are today.",
-        author: "Andrew Tate"
-    },
-    // Add more quotes here...
-];
+const quoteContainer = document.getElementById("quote-container");
+const quoteText = document.getElementById("quote-text");
+const author = document.getElementById("author");
+const newQuoteButton = document.getElementById("new-quote-button");
 
-// ... (rest of the JavaScript code)
+function getRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+}
+
+function displayQuote() {
+    const randomQuote = getRandomQuote();
+    quoteText.textContent = randomQuote.text;
+    author.textContent = `- ${randomQuote.author}`;
+}
+
+newQuoteButton.addEventListener("click", displayQuote);
+
+displayQuote();
